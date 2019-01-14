@@ -1,0 +1,52 @@
+[
+  {
+    "config":{
+             "name":"testcasse login",
+             "variables":{},
+             "base_url":"http://www.uelaw.cn:8002",
+             "requset":{
+                          "headers":{
+                                  "user-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36Content-Type: application/json;charset=UTF-8",
+                                  "Content-Type":"application/json, text/plain",
+                                   "token":"56566676767"
+                          }
+             }
+
+  }},
+  {"test":{
+       "name":"read_input",
+       "request":{
+                "url":"/api/UserApi/Login",
+                "method":"POST",
+                "json":{"account":"18311135605","type":"phone","password":"asdf123"}
+       },
+       "validate":[
+         {"eq": [
+                        "status_code",
+                        200
+                    ]}
+       ]
+  }},
+  {"test":{
+       "name":"read_input",
+       "request":{
+                "url":"/api/UserApi/Login",
+                "method":"POST",
+                "json":{"account":"18311135605","type":"phone","password":"asdf123"}
+       },
+       "validate":[
+         {"eq": [
+                        "status_code",
+                        200
+                    ]},
+         {
+           "ne": [
+              "content.result",""
+
+                    ]
+                }
+       ]
+  }
+
+  }
+]

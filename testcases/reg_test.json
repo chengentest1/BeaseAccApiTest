@@ -1,0 +1,33 @@
+[
+  {"config":{
+              "name":"reg_test",
+              "variables":{},
+              "base_url":"http://127.0.0.1:5000",
+               "requset":{
+                           "headers":{
+                                      "Content-Type":"application/json"
+                                      }
+
+                           }
+
+
+
+              }
+  },
+  {"test":{
+          "name":"reg_real",
+           "request":{
+                "method":"POST",
+                 "url":"/api/user/reg/",
+                "json":{
+
+                       "name": "jj黎明",
+                       "passwd": "123456"
+                         }
+                       },
+            "validate":[
+              {"eq":["content.code","100001"]}
+            ]
+           }
+  }
+]

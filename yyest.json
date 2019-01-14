@@ -1,0 +1,58 @@
+[
+    {
+        "config": {
+            "name": "testcase description",
+            "variables": {}
+        }
+    },
+    {
+        "test": {
+            "validate": [
+                {
+                    "eq": [
+                        "status_code",
+                        200
+                    ]
+                },
+                {
+                    "eq": [
+                        "headers.Content-Type",
+                        "application/json; charset=utf-8"
+                    ]
+                },
+                {
+                    "eq": [
+                        "content.unAuthorizedRequest",
+                        false
+                    ]
+                },
+                {
+                    "eq": [
+                        "content.success",
+                        true
+                    ]
+                },
+                {
+                    "eq": [
+                        "content.error",
+                        null
+                    ]
+                }
+            ],
+            "name": "/api/UserApi/Login",
+            "request": {
+                "method": "POST",
+                "headers": {
+                    "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/71.0.3578.98 Safari/537.36",
+                    "Content-Type": "application/json;charset=UTF-8"
+                },
+                "json": {
+                    "account": "18311135605",
+                    "type": "phone",
+                    "password": "asdf123"
+                },
+                "url": "http://www.uelaw.cn:8002/api/UserApi/Login"
+            }
+        }
+    }
+]
